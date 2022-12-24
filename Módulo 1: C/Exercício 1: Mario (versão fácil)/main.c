@@ -1,5 +1,5 @@
 /*
-Vamos recriar essa pirâmide em C, ainda que em texto, usando hashes ( # ) para tijolos, 
+Vamos recriar essa pirâmide em C, ainda que em texto, usando hashes ( # ) para tijolos,
 como visto a seguir. Cada hash é um pouco mais alto do que largo, então a pirâmide em si também é mais alta do que larga.
               #
             ##
@@ -18,6 +18,11 @@ void criar_bloco(void)
     printf("#");
 }
 
+void criar_espaco(void)
+{
+    printf(" ");
+}
+
 int main(void)
 {
     short altura;
@@ -31,13 +36,18 @@ int main(void)
 
     for (short i = 0; i < altura; i++)
     {
+        for (short k = altura - 1; k > i; k--)
+        {
+            criar_espaco();
+        }
+
         for (short j = 0; j <= i; j++)
         {
             criar_bloco();
         }
+
         printf("\n");
     }
-       
 
     return 0;
 }
