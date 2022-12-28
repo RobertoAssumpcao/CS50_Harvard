@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
     float dollar;
     int centavos;
-    short qtd_moedas_usadas = 0, moedas_usadas[40], moeda[4] = {25,10,5,1}, i = 0;
+    short qtd_moedas_usadas[4] = {0, 0, 0 ,0}, moeda[4] = {25,10,5,1}, i = 0, contador = 0;
 
 
     // Pegando troco e convertendo em centavos.
@@ -28,25 +28,23 @@ int main(int argc, char *argv[])
         if(centavos - moeda[i] < 0)
         {
             i++;
-            continue;
         }
         else
         {
-            centavos = centavos - moeda[i];
-            moedas_usadas[qtd_moedas_usadas] = moeda[i];
-            qtd_moedas_usadas++;
+            centavos -= moeda[i];
+            qtd_moedas_usadas[i]++;
+            contador++;
         }
 
     } while (centavos >= 1);
     
-    printf("centavos restantes: %i\n", centavos);
-    printf("Foram usadas: %i\n", qtd_moedas_usadas);
-    
-    for (short j = 0; j < qtd_moedas_usadas; j++)
+    for (short j = 0; j < 4; j++)
     {
-        printf("As moedas usadas foram: %i\n", moedas_usadas[j]);
+        if(qtd_moedas_usadas[j] > 0)
+        {
+            printf("Precisa usar %i moedas de $%ic \n", qtd_moedas_usadas[j], moeda[j]);
+        }    
     }
     
-
     return 0;
 }
