@@ -4,13 +4,12 @@
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main(int argc, char *argv[])
 {
     float dollar;
     int centavos;
-    short qtd_moedas_usadas[4] = {0, 0, 0 ,0}, moeda[4] = {25,10,5,1}, i = 0, contador = 0;
+    short qtd_moedas_usadas[4] = {0, 0, 0 ,0}, moeda[4] = {25,10,5,1}, i = 0;
 
 
     // Pegando troco e convertendo em centavos.
@@ -33,16 +32,15 @@ int main(int argc, char *argv[])
         {
             centavos -= moeda[i];
             qtd_moedas_usadas[i]++;
-            contador++;
         }
 
     } while (centavos >= 1);
     
-    for (short j = 0; j < 4; j++)
+    for (i = 0; i < 4; i++)
     {
-        if(qtd_moedas_usadas[j] > 0)
+        if(qtd_moedas_usadas[i] > 0)
         {
-            printf("Precisa usar %i moedas de $%ic \n", qtd_moedas_usadas[j], moeda[j]);
+            printf("Precisa usar %i moedas de $%ic \n", qtd_moedas_usadas[i], moeda[i]);
         }    
     }
     
