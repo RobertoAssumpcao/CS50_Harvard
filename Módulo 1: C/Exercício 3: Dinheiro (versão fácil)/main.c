@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    float dollar;
+    double dollar;
     int centavos;
     short qtd_moedas_usadas[4] = {0, 0, 0 ,0}, moeda[4] = {25,10,5,1}, i = 0;
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     do
     {
         printf("Digite o troco devido:\n");
-        scanf("%f", &dollar);
+        scanf("%lf", &dollar);
     } while (dollar <= 0.0);
     
     centavos = dollar * 100;
