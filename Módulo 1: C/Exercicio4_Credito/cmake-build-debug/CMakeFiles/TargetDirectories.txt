@@ -1,0 +1,3 @@
+/home/roberto/CLionProjects/CS50_Harvard/Módulo 1: C/Exercicio4_Credito/cmake-build-debug/CMakeFiles/Exercicio4_Credito.dir
+/home/roberto/CLionProjects/CS50_Harvard/Módulo 1: C/Exercicio4_Credito/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/roberto/CLionProjects/CS50_Harvard/Módulo 1: C/Exercicio4_Credito/cmake-build-debug/CMakeFiles/rebuild_cache.dir
