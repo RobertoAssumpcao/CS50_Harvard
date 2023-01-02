@@ -7,10 +7,11 @@
 #include <ctype.h>
 #include <string.h>
 
-int main(void) {
-    double grade = 0.0;
-    unsigned int letters = 0, sentences = 0, words = 0;
-    char text[251];
+int main(void)
+{
+    float grade, letter, sentendes;
+    unsigned int counter_letter = 0, counter_sentendes = 0, counter_words = 0;
+    char text[551];
     unsigned long n = 0;
 
     printf("text: ");
@@ -18,17 +19,45 @@ int main(void) {
 
 
     n = strlen(text);
-    for (int i = 0; i <= n; i++) {
-        if (isalpha(text[i])) {
-            letters++;
+
+    if(n>=3)
+    {
+        counter_words++;
+    }
+    for (int i = 0; i <= n; i++)
+    {
+        if (isalpha(text[i]))
+        {
+            counter_letter++;
         }
+        if(isspace(text[i]))
+        {
+            counter_words++;
+        }
+
+        counter_sentendes = (text[i] == '.' || text[i] == '!' || text[i] == '?') ? counter_sentendes + 1 : counter_sentendes;
     }
 
-    grade = 0.0588 * letters - 0.296 * sentences - 15.8;
+    letter = (float)counter_letter * 100 / (float) counter_words;
+    sentendes = (float) counter_sentendes * 100 / (float) counter_words;
 
-    printf("%s\n", text);
-    printf("Letters %i\n", letters);
-    printf("Grade %f\n", grade);
+    grade = 0.0588 * letter - 0.296 * sentendes - 15.8;
+
+    if (grade >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        if (grade <= 1)
+        {
+            printf("Before Grade 1\n");
+        }
+        else
+        {
+            printf("Grade %i\n", (int)grade);
+        }
+    }
 
     return 0;
 }
