@@ -1,3 +1,0 @@
-/home/roberto/CLionProjects/CS50_Harvard/Modulo2_array/exercicio0_Legibilidade/cmake-build-debug/CMakeFiles/exercicio0_Legibilidade.dir
-/home/roberto/CLionProjects/CS50_Harvard/Modulo2_array/exercicio0_Legibilidade/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/roberto/CLionProjects/CS50_Harvard/Modulo2_array/exercicio0_Legibilidade/cmake-build-debug/CMakeFiles/rebuild_cache.dir
